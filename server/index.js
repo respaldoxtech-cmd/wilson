@@ -25,24 +25,37 @@ if (!MONGODB_URI) {
 const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
 const messageRoutes = require('./routes/messages');
+const authRoutes = require('./routes/auth');
 
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/messages', messageRoutes);
+app.use('/api/auth', authRoutes);
 
-// Servir archivos estáticos del frontend (React build)
+// --- SERVIR ARCHIVOS ESTÁTICOS ---
+
+// 1. Panel de Administrador (React Build)
 const distPath = path.join(__dirname, '../dist');
-app.use(express.static(distPath));
+app.use('/admin', express.static(distPath));
 
-// Manejar cualquier otra ruta devolviendo el index.html (para React Router)
-app.get(/.*/, (req, res) => {
-    const indexPath = path.join(distPath, 'index.html');
-    res.sendFile(indexPath, (err) => {
+// 2. Página de Visitantes/Tienda (Public)
+const publicPath = path.join(__dirname, '../public');
+app.use(express.static(publicPath));
+
+// --- MANEJO DE RUTAS SPA ---
+
+// Rutas de Admin (React Router)
+app.get('/admin/*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'), (err) => {
         if (err) {
-            console.error('Error enviando index.html:', err);
-            res.status(500).send('<h1>Error: No se encontró el Frontend</h1><p>Asegúrate de que el "Build Command" en Render ejecutó "npm run build".</p>');
+            res.status(500).send('Error: Admin build not found. Run npm run build.');
         }
     });
+});
+
+// Rutas de la Tienda (Fallback a index.html)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 app.listen(PORT, () => {

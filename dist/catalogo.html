@@ -99,8 +99,128 @@
         /* ===== TÍTULO DE SECCIÓN REUTILIZABLE ===== */
         .section-title {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 40px;
         }
+
+        /* ===== DYNAMIC HEADER BACKGROUNDS ===== */
+        .catalog-header-bg {
+            padding: 60px 0;
+            margin-bottom: 30px;
+            transition: all 0.5s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-size: contain;
+            /* Muestra la imagen completa */
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            /* Imagen a la derecha alineada abajo */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* En movil, oscurecemos la imagen o la quitamos para leer mejor */
+        @media (max-width: 768px) {
+            .catalog-header-bg {
+                background-position: center bottom;
+                background-size: cover;
+                background-blend-mode: overlay;
+            }
+        }
+
+        /* Contenedor interno para dar espacio al texto y que no se encime con la imagen */
+        .header-content-wrapper {
+            max-width: 700px;
+            /* Limita el ancho del texto/buscador para no tapar la imagen derecha */
+            margin: 0 auto;
+            /* Centrado por defecto, o 0 si queremos alineado a la izq */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Default/Todos */
+        .bg-todos {
+            background-color: var(--gray-100);
+            background-image: none;
+            /* Sin imagen en todos, o una genérica */
+            color: var(--black);
+        }
+
+        .bg-todos h2 {
+            color: var(--black);
+        }
+
+        .bg-todos p {
+            color: var(--gray-600);
+        }
+
+        /* UPS */
+        .bg-ups {
+            background-color: var(--gray-900);
+            background-image: url('https://placehold.co/400x300/2d2d2d/ffffff?text=UPS+System+PNG');
+            color: var(--white);
+        }
+
+        .bg-ups .section-title h2,
+        .bg-ups h2 {
+            color: var(--white);
+        }
+
+        .bg-ups .section-title p,
+        .bg-ups p {
+            color: var(--gray-400);
+        }
+
+        /* Cámaras */
+        .bg-camaras {
+            background-color: #0f172a;
+            background-image: url('https://placehold.co/400x300/0f172a/ffffff?text=CCTV+Camera+PNG');
+            color: var(--white);
+        }
+
+        .bg-camaras .section-title h2,
+        .bg-camaras h2 {
+            color: var(--white);
+        }
+
+        .bg-camaras .section-title p,
+        .bg-camaras p {
+            color: var(--gray-300);
+        }
+
+        /* Plantas */
+        .bg-plantas {
+            background-color: #b45309;
+            background-image: url('https://placehold.co/400x300/b45309/ffffff?text=Generator+PNG');
+            color: var(--white);
+        }
+
+        .bg-plantas .section-title h2,
+        .bg-plantas h2 {
+            color: var(--white);
+        }
+
+        .bg-plantas .section-title p,
+        .bg-plantas p {
+            color: var(--gray-100);
+        }
+
+        /* Instalación */
+        .bg-instalacion {
+            background-color: var(--red-dark);
+            background-image: url('https://placehold.co/400x300/c53030/ffffff?text=Technician+PNG');
+            color: var(--white);
+        }
+
+        .bg-instalacion .section-title h2,
+        .bg-instalacion h2 {
+            color: var(--white);
+        }
+
+        .bg-instalacion .section-title p,
+        .bg-instalacion p {
+            color: var(--gray-200);
+        }
+
+
 
         .section-title h2 {
             font-size: 2rem;
@@ -1825,11 +1945,10 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#promociones">Promociones</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li id="loginLink"><a href="login.html" style="color:var(--red);"><i class="fa-solid fa-user"></i>
-                        Iniciar Sesión</a></li>
+                <li id="loginLink"><a href="login.html" style="color:var(--red);"><i class="fa-solid fa-user"></i> Iniciar Sesión</a></li>
             </ul>
             <!-- ===== INDICADOR DE USUARIO LOGUEADO =====
                  Se muestra solo cuando hay sesión activa.
@@ -1845,214 +1964,130 @@
     </nav>
 
     <!-- ================================================================
-     HERO - Banner principal con descuento destacado
-     Estilo Daka: porcentaje grande, fondo oscuro, imagen de producto
+     CATÁLOGO - Grid de productos con filtros por categoría
      ================================================================ -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <div class="hero-content animate">
-                <h1>Protege tu hogar y negocio</h1>
-                <div class="discount-big">HASTA 30%</div>
-                <div class="discount-text">de descuento en respaldo eléctrico</div>
-                <p>UPS, plantas eléctricas, instalación profesional y cámaras de seguridad. Soluciones confiables para
-                    tu tranquilidad.</p>
-                <div class="hero-buttons">
-                    <a href="catalogo.html" class="btn btn-red"><i class="fa-solid fa-th-large"></i> Ver Catálogo</a>
-                    <a href="https://wa.me/521234567890?text=Hola%2C%20estoy%20interesado%20en%20sus%20productos"
-                        target="_blank" class="btn btn-hero-outline"><i class="fa-brands fa-whatsapp"></i> Contactar</a>
-                </div>
-            </div>
-            <div class="hero-image animate">
-                <img src="https://placehold.co/500x400/1a1a1a/e53e3e?text=UPS+%E2%9A%A1+3000VA"
-                    alt="UPS Respaldo Eléctrico">
-            </div>
-        </div>
-    </section>
+    <section class="catalog" id="catalogo">
 
-    <!-- ================================================================
-     CATEGORÍAS - 4 tarjetas de categoría debajo del hero (estilo Daka)
-     ================================================================ -->
-    <section class="categories">
-        <div class="container">
-            <div class="cat-grid">
-                <div class="cat-card animate">
-                    <i class="fa-solid fa-car-battery"></i>
-                    <h3>UPS y Reguladores</h3>
-                    <p>Respaldo eléctrico confiable</p>
+        <!-- Header Dinámico (Fondo cambia según categoría) -->
+        <div id="catalogHeader" class="catalog-header-bg bg-todos">
+            <div class="container">
+                <div class="section-title animate" style="margin-bottom: 20px;">
+                    <h2>⚡ Catálogo Completo</h2>
+                    <p>Explora nuestra selección de productos de seguridad y respaldo eléctrico</p>
                 </div>
-                <div class="cat-card animate">
-                    <i class="fa-solid fa-solar-panel"></i>
-                    <h3>Plantas Eléctricas</h3>
-                    <p>Energía continua garantizada</p>
-                </div>
-                <div class="cat-card animate">
-                    <i class="fa-solid fa-video"></i>
-                    <h3>Cámaras de Seguridad</h3>
-                    <p>Vigilancia 24/7</p>
-                </div>
-                <div class="cat-card animate">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h3>Instalación Profesional</h3>
-                    <p>Servicio técnico certificado</p>
+
+                <!-- Barra de búsqueda para el catálogo -->
+                <div class="catalog-search-container animate"
+                    style="max-width: 600px; margin: 0 auto; display: flex; gap: 10px;">
+                    <input type="text" id="catalogSearchInput" placeholder="Buscar productos..."
+                        style="flex: 1; padding: 12px; border: 2px solid var(--gray-300); border-radius: var(--radius-sm); font-size: 1rem;">
+                    <button id="catalogSearchBtn" class="btn btn-red"><i class="fa-solid fa-search"></i></button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ================================================================
-     PROMOCIONES - Ofertas especiales con tarjetas de descuento
-     ================================================================ -->
-    <section class="promotions" id="promociones">
         <div class="container">
-            <div class="section-title animate">
-                <h2>🔥 Ofertas Especiales</h2>
-                <p>Aprovecha nuestros descuentos por tiempo limitado</p>
+            <!-- Filtros: cada botón filtra los productos por data-category -->
+
+            <!-- Filtros: cada botón filtra los productos por data-category -->
+            <div class="catalog-filters animate">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="ups">UPS</button>
+                <button class="filter-btn" data-filter="camaras">Cámaras</button>
+                <button class="filter-btn" data-filter="plantas">Plantas Eléctricas</button>
+                <button class="filter-btn" data-filter="instalacion">Instalación</button>
             </div>
-            <div class="promo-grid">
-                <!-- Tarjeta promo 1 -->
-                <div class="promo-card animate">
-                    <span class="promo-badge">-30%</span>
-                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=UPS+1500VA"
-                            alt="UPS 1500VA"></div>
-                    <div class="promo-info">
-                        <h3>UPS Interactivo 1500VA / 900W</h3>
-                        <div class="promo-prices">
-                            <span class="price-old">$4,200</span>
-                            <span class="price-new">$2,940</span>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Producto 1 -->
+                <div class="product-card animate" data-category="ups">
+                    <div class="img-wrap"><img src="https://placehold.co/380x260/f3f4f6/1a1a1a?text=UPS+3000VA"
+                            alt="UPS 3000VA"></div>
+                    <div class="product-body">
+                        <h3>UPS Online 3000VA / 2700W</h3>
+                        <p class="desc">Doble conversión, pantalla LCD, 6 tomacorrientes.</p>
+                        <p class="price">REF. $12,500</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-dark">Ver detalles</a>
+                            <a href="#" class="btn btn-red"><i class="fa-solid fa-cart-plus"></i> Agregar</a>
                         </div>
-                        <a href="#" class="btn btn-red">Comprar Ahora</a>
                     </div>
                 </div>
-                <!-- Tarjeta promo 2 -->
-                <div class="promo-card animate">
-                    <span class="promo-badge">-25%</span>
-                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=Kit+4+Cámaras"
-                            alt="Kit Cámaras"></div>
-                    <div class="promo-info">
-                        <h3>Kit 4 Cámaras HD + DVR 1TB</h3>
-                        <div class="promo-prices">
-                            <span class="price-old">$8,500</span>
-                            <span class="price-new">$6,375</span>
+                <!-- Producto 2 -->
+                <div class="product-card animate" data-category="camaras">
+                    <div class="img-wrap"><img src="https://placehold.co/380x260/f3f4f6/1a1a1a?text=Cámara+Domo"
+                            alt="Cámara Domo"></div>
+                    <div class="product-body">
+                        <h3>Cámara Domo 4MP IR 30m</h3>
+                        <p class="desc">Visión nocturna, IP67, detección de movimiento.</p>
+                        <p class="price">REF. $1,850</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-dark">Ver detalles</a>
+                            <a href="#" class="btn btn-red"><i class="fa-solid fa-cart-plus"></i> Agregar</a>
                         </div>
-                        <a href="#" class="btn btn-red">Comprar Ahora</a>
                     </div>
                 </div>
-                <!-- Tarjeta promo 3 -->
-                <div class="promo-card animate">
-                    <span class="promo-badge">-20%</span>
-                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=Regulador+2000W"
+                <!-- Producto 3 -->
+                <div class="product-card animate" data-category="plantas">
+                    <div class="img-wrap"><img src="https://placehold.co/380x260/f3f4f6/1a1a1a?text=Planta+5500W"
+                            alt="Planta Eléctrica"></div>
+                    <div class="product-body">
+                        <h3>Planta Eléctrica Gasolina 5500W</h3>
+                        <p class="desc">Motor 4 tiempos, arranque eléctrico, autonomía 10h.</p>
+                        <p class="price">REF. $18,900</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-dark">Ver detalles</a>
+                            <a href="#" class="btn btn-red"><i class="fa-solid fa-cart-plus"></i> Agregar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 4 -->
+                <div class="product-card animate" data-category="instalacion">
+                    <div class="img-wrap"><img src="https://placehold.co/380x260/f3f4f6/1a1a1a?text=Instalación+UPS"
+                            alt="Instalación"></div>
+                    <div class="product-body">
+                        <h3>Servicio Instalación UPS Residencial</h3>
+                        <p class="desc">Incluye cableado, configuración y pruebas de respaldo.</p>
+                        <p class="price">REF. $2,500</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-dark">Ver detalles</a>
+                            <a href="#" class="btn btn-red"><i class="fa-solid fa-cart-plus"></i> Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 5 -->
+                <div class="product-card animate" data-category="camaras">
+                    <div class="img-wrap"><img src="https://placehold.co/380x260/f3f4f6/1a1a1a?text=DVR+8+Canales"
+                            alt="DVR 8 Canales"></div>
+                    <div class="product-body">
+                        <h3>DVR 8 Canales + Disco 2TB</h3>
+                        <p class="desc">Grabación 1080p, acceso remoto por app, H.265+.</p>
+                        <p class="price">REF. $5,200</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-dark">Ver detalles</a>
+                            <a href="#" class="btn btn-red"><i class="fa-solid fa-cart-plus"></i> Agregar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 6 -->
+                <div class="product-card animate" data-category="ups">
+                    <div class="img-wrap"><img src="https://placehold.co/380x260/f3f4f6/1a1a1a?text=Regulador+1200W"
                             alt="Regulador"></div>
-                    <div class="promo-info">
-                        <h3>Regulador de Voltaje 2000W</h3>
-                        <div class="promo-prices">
-                            <span class="price-old">$1,800</span>
-                            <span class="price-new">$1,440</span>
+                    <div class="product-body">
+                        <h3>Regulador Automático 1200W</h3>
+                        <p class="desc">8 contactos, protección contra sobretensión y picos.</p>
+                        <p class="price">REF. $980</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-dark">Ver detalles</a>
+                            <a href="#" class="btn btn-red"><i class="fa-solid fa-cart-plus"></i> Agregar</a>
                         </div>
-                        <a href="#" class="btn btn-red">Comprar Ahora</a>
-                    </div>
-                </div>
-                <!-- Tarjeta promo 4 -->
-                <div class="promo-card animate">
-                    <span class="promo-badge">-15%</span>
-                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=Cámara+PTZ"
-                            alt="Cámara PTZ"></div>
-                    <div class="promo-info">
-                        <h3>Cámara PTZ WiFi 360° 4MP</h3>
-                        <div class="promo-prices">
-                            <span class="price-old">$3,200</span>
-                            <span class="price-new">$2,720</span>
-                        </div>
-                        <a href="#" class="btn btn-red">Comprar Ahora</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-
-    <!-- ================================================================
-     PRODUCTO DESTACADO - Layout 50/50, imagen + info detallada
-     ================================================================ -->
-    <section class="featured">
-        <div class="container">
-            <div class="featured-grid">
-                <div class="featured-img animate">
-                    <img src="https://placehold.co/560x420/1a1a1a/e53e3e?text=Kit+8+Cámaras+⭐"
-                        alt="Kit 8 Cámaras Seguridad">
-                </div>
-                <div class="featured-info animate">
-                    <span class="featured-badge"><i class="fa-solid fa-trophy"></i> BESTSELLER</span>
-                    <h2>Kit Completo 8 Cámaras de Seguridad 4K</h2>
-                    <p>Sistema de videovigilancia profesional con grabador NVR, disco duro de 4TB y acceso remoto desde
-                        tu
-                        celular. Instalación incluida.</p>
-                    <div class="featured-price">$24,900</div>
-                    <ul class="features-list">
-                        <li><i class="fa-solid fa-check-circle"></i> 8 cámaras 4K Ultra HD con visión nocturna</li>
-                        <li><i class="fa-solid fa-check-circle"></i> NVR 8 canales + disco duro 4TB incluido</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Acceso remoto desde celular (iOS/Android)</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Detección inteligente de movimiento</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Instalación profesional incluida</li>
-                    </ul>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-red"><i class="fa-solid fa-shopping-bag"></i> Comprar Ahora</a>
-                        <a href="#" class="btn btn-featured-outline">Más Información</a>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
             </div>
-        </div>
-    </section>
-
-    <!-- ================================================================
-     UBICACIÓN - Mapa de Google Maps + información del negocio
-     ================================================================ -->
-    <section class="location" id="ubicacion">
-        <div class="container">
-            <div class="section-title animate">
-                <h2>📍 Encuéntranos</h2>
-                <p>Visita nuestra tienda y conoce nuestros productos en persona</p>
-            </div>
-            <div class="location-grid animate">
-                <div class="map-wrap">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.661490088268!2d-99.1354000!3d19.4326000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92c3f15f851%3A0x63a8e5a1e46e3a99!2sCiudad%20de%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
-                        allowfullscreen="" loading="lazy" title="Ubicación PowerGuard"></iframe>
-                </div>
-                <div class="location-info">
-                    <h3>Información de la Tienda</h3>
-                    <div class="info-item"><i class="fa-solid fa-map-marker-alt"></i>
-                        <div><strong>Dirección</strong><span>Av. Principal #123, Col. Centro, Ciudad de México, CP
-                                06000</span></div>
-                    </div>
-                    <div class="info-item"><i class="fa-solid fa-clock"></i>
-                        <div><strong>Horarios</strong><span>Lun - Vie: 9:00 AM - 7:00 PM<br>Sáb: 10:00 AM - 5:00
-                                PM<br>Dom:
-                                Cerrado</span></div>
-                    </div>
-                    <div class="info-item"><i class="fa-solid fa-phone"></i>
-                        <div><strong>Teléfono</strong><span>+52 (555) 123-4567</span></div>
-                    </div>
-                    <div class="info-item"><i class="fa-solid fa-envelope"></i>
-                        <div><strong>Email</strong><span>contacto@powerguard.com</span></div>
-                    </div>
-                    <a href="https://www.google.com/maps?q=19.4326,-99.1332" target="_blank" class="btn btn-red"
-                        style="width:100%;justify-content:center;margin-top:14px;"><i
-                            class="fa-solid fa-directions"></i>
-                        Cómo llegar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================================================================
-     SECCIÓN WHATSAPP - CTA verde con botón grande
-     ================================================================ -->
-    <section class="whatsapp-section" id="contacto">
-        <div class="container animate">
-            <h2><i class="fa-brands fa-whatsapp"></i> ¿Necesitas asesoría? Escríbenos</h2>
-            <p>Te ayudamos a elegir el sistema ideal para tu hogar o negocio. Respuesta inmediata.</p>
-            <a href="https://wa.me/521234567890?text=Hola%2C%20estoy%20interesado%20en%20sus%20productos%20de%20respaldo%20eléctrico"
-                target="_blank" class="btn"><i class="fa-brands fa-whatsapp"></i> Chatea con nosotros</a>
         </div>
     </section>
 
@@ -2085,7 +2120,7 @@
                 <div class="footer-col">
                     <h4>Contacto</h4><a href="tel:+525551234567"><i class="fa-solid fa-phone"></i> +52 (555)
                         123-4567</a><a href="mailto:contacto@powerguard.com"><i class="fa-solid fa-envelope"></i>
-                        contacto@powerguard.com</a><a href="#inicio">Inicio</a><a href="catalogo.html">Catálogo</a>
+                        contacto@powerguard.com</a><a href="#inicio">Inicio</a><a href="#catalogo">Catálogo</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -2214,93 +2249,10 @@
     <!-- ===== TOAST NOTIFICATION (mensajes temporales) ===== -->
     <div class="pg-toast" id="pgToast"></div>
 
-    <!-- JAVASCRIPT - API Y DINAMISMO -->
-    <script src="js/api.js"></script>
+    <!-- ================================================================
+     JAVASCRIPT - Toda la interactividad de la página
+     ================================================================ -->
     <script>
-        // Función para cargar productos dinámicamente
-        async function cargarProductosDinamicos() {
-            try {
-                const productos = await window.pgApi.getProducts();
-                window.pgProductos = productos; // Guardar globalmente
-
-                // 1. Mostrar en Ofertas Especiales
-                const promoGrid = document.querySelector('.promo-grid');
-                if (promoGrid && productos.length > 0) {
-                    promoGrid.innerHTML = '';
-                    productos.slice(0, 4).forEach(p => {
-                        const card = document.createElement('div');
-                        card.className = 'promo-card animate';
-                        card.innerHTML = `
-                            <div class="promo-badge">-20%</div>
-                            <div class="img-wrap"><img src="${p.image || 'https://via.placeholder.com/300'}" alt="${p.name}"></div>
-                            <div class="promo-info">
-                                <h3>${p.name}</h3>
-                                <div class="promo-prices">
-                                    <span class="price-old">$${(p.price * 1.25).toLocaleString()}</span>
-                                    <span class="price-new">$${p.price.toLocaleString()}</span>
-                                </div>
-                                <button class="btn btn-red">Comprar Ahora</button>
-                            </div>`;
-                        card.querySelector('.btn-red').onclick = () => abrirModal(p.name, p.category || '', `$${p.price.toLocaleString()}`, p.image, p._id);
-                        promoGrid.appendChild(card);
-                    });
-                }
-
-                // 2. Mostrar en Catálogo
-                const productsGrid = document.querySelector('.products-grid');
-                if (productsGrid) {
-                    productsGrid.innerHTML = '';
-                    productos.forEach(p => {
-                        const card = document.createElement('div');
-                        card.className = 'product-card animate';
-                        card.dataset.category = p.category || 'otros';
-                        card.innerHTML = `
-                            <div class="img-wrap"><img src="${p.image || 'https://via.placeholder.com/300'}" alt="${p.name}"></div>
-                            <div class="product-body">
-                                <h3>${p.name}</h3>
-                                <p class="desc">${p.category || 'Categoría'}</p>
-                                <p class="price">$${p.price.toLocaleString()}</p>
-                                <div class="product-actions">
-                                    <button class="btn btn-red">Comprar Ahora</button>
-                                    <button class="btn btn-outline">Ver detalles</button>
-                                </div>
-                            </div>`;
-                        card.querySelector('.btn-red').onclick = () => {
-                            if (!estaLogueado()) return irALogin();
-                            agregarAlCarrito({
-                                id: p._id,
-                                nombre: p.name,
-                                precio: `$${p.price.toLocaleString()}`,
-                                imagen: p.image
-                            }, 1);
-                            abrirCarrito();
-                        };
-                        card.querySelector('.btn-outline').onclick = () => abrirModal(p.name, p.category || '', `$${p.price.toLocaleString()}`, p.image, p._id);
-                        productsGrid.appendChild(card);
-                    });
-                }
-
-                // Re-inicializar observador de animaciones
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry, i) => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => entry.target.classList.add('show'), i * 70);
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.12 });
-                document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-
-            } catch (err) {
-                console.error('Error cargando productos:', err);
-            }
-        }
-
-        // Llamar al cargar el DOM
-        document.addEventListener('DOMContentLoaded', cargarProductosDinamicos);
-    </script>
-    <script>
-        // El resto del JS original...
         // ================================================================
         // JAVASCRIPT PRINCIPAL - index.html
         // Contiene TODA la interactividad de la página:
@@ -2321,17 +2273,88 @@
             link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
         });
 
-        // ===== 2. FILTROS DEL CATÁLOGO: Muestra/oculta productos por categoría =====
+        // ===== 2. FILTROS DEL CATÁLOGO Y FONDO DINÁMICO =====
+        const catalogHeader = document.getElementById('catalogHeader');
+
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
+                // 1. Gestionar clases de botones
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+
                 const filter = btn.dataset.filter;
+
+                // 2. Gestionar visibilidad de productos
                 document.querySelectorAll('.product-card').forEach(card => {
                     card.style.display = (filter === 'todos' || card.dataset.category === filter) ? 'block' : 'none';
                 });
+
+                // 3. CAMBIAR FONDO DINÁMICO Y TEXTOS
+                // Remover clases bg-* anteriores
+                catalogHeader.classList.remove('bg-todos', 'bg-ups', 'bg-camaras', 'bg-plantas', 'bg-instalacion');
+                // Añadir nueva clase
+                catalogHeader.classList.add('bg-' + filter);
+
+                // Cambiar textos según categoría
+                const titleEl = document.getElementById('catalogTitleText');
+                const subEl = document.getElementById('catalogSubtitleText');
+
+                switch (filter) {
+                    case 'ups':
+                        titleEl.textContent = 'Sistemas UPS y Reguladores';
+                        subEl.textContent = 'Protección eléctrica ininterrumpida para tus equipos';
+                        break;
+                    case 'camaras':
+                        titleEl.textContent = 'Video vigilancia y Seguridad';
+                        subEl.textContent = 'Monitorea tu propiedad 24/7 desde cualquier lugar';
+                        break;
+                    case 'plantas':
+                        titleEl.textContent = 'Plantas Eléctricas';
+                        subEl.textContent = 'Generadores de alto rendimiento para respaldo total';
+                        break;
+                    case 'instalacion':
+                        titleEl.textContent = 'Servicios de Instalación';
+                        subEl.textContent = 'Personal certificado para instalaciones seguras y garantizadas';
+                        break;
+                    default: // todos
+                        titleEl.textContent = '⚡ Catálogo Completo';
+                        subEl.textContent = 'Explora nuestra selección de productos de seguridad y respaldo eléctrico';
+                }
+
+                // 4. Limpiar búsqueda
+                const search = document.getElementById('catalogSearchInput');
+                if (search) search.value = '';
             });
         });
+
+        // ===== 2.1 BUSCADOR EN CATÁLOGO =====
+        const catalogSearchInput = document.getElementById('catalogSearchInput');
+        const catalogSearchBtn = document.getElementById('catalogSearchBtn');
+
+        function filtrarCatalogo(termino) {
+            termino = termino.toLowerCase();
+            document.querySelectorAll('.product-card').forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('.desc').textContent.toLowerCase();
+                const matches = title.includes(termino) || desc.includes(termino);
+                card.style.display = matches ? 'block' : 'none';
+            });
+            // Quitar clase activa de filtros
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        }
+
+        if (catalogSearchInput) {
+            catalogSearchInput.addEventListener('input', (e) => {
+                filtrarCatalogo(e.target.value);
+            });
+
+            if (catalogSearchBtn) {
+                catalogSearchBtn.addEventListener('click', () => {
+                    filtrarCatalogo(catalogSearchInput.value);
+                });
+            }
+        }
+
 
         // ===== 3. ANIMACIONES AL SCROLL: Elementos aparecen al ser visibles =====
         // Usa IntersectionObserver para detectar cuándo un elemento entra en pantalla
@@ -2379,12 +2402,12 @@
                 cartFloatEl.style.display = 'flex';
                 // Actualizar el badge del carrito con la cantidad actual
                 actualizarBadgeCarrito();
-                if (loginLinkEl) loginLinkEl.style.display = 'none';
+                if(loginLinkEl) loginLinkEl.style.display = 'none';
             } else {
                 // USUARIO NO LOGUEADO: ocultar elementos de sesión
                 userInfoEl.style.display = 'none';
                 cartFloatEl.style.display = 'none';
-                if (loginLinkEl) loginLinkEl.style.display = 'block';
+                if(loginLinkEl) loginLinkEl.style.display = 'block';
             }
         }
 
@@ -2442,7 +2465,7 @@
         let productoSeleccionado = null;
 
         // --- Abrir modal con la info del producto ---
-        function abrirModal(nombre, descripcion, precio, imagenSrc, id) {
+        function abrirModal(nombre, descripcion, precio, imagenSrc) {
             // Llenar datos básicos
             modalImg.src = imagenSrc;
             modalImg.alt = nombre;
@@ -2454,7 +2477,12 @@
             qtyInput.value = 1;
 
             // Guardar referencia
-            productoSeleccionado = { id, nombre, descripcion, precio, imagen: imagenSrc };
+            productoSeleccionado = {
+                nombre: nombre,
+                descripcion: descripcion,
+                precio: precio,
+                imagen: imagenSrc
+            };
 
             // Cargar comentarios de este producto
             cargarComentarios(nombre);
@@ -2492,8 +2520,31 @@
             if (val < 99) qtyInput.value = val + 1;
         });
 
-        // --- SISTEMA DE COMENTARIOS (Conectado a API) ---
-        async function guardarComentario(e) {
+        // --- SISTEMA DE COMENTARIOS (localStorage) ---
+        // Clave: "pgComments_{nombreProducto}"
+        function cargarComentarios(nombreProducto) {
+            const key = 'pgComments_' + nombreProducto.replace(/\s+/g, '_'); // Clave segura
+            const comentarios = JSON.parse(localStorage.getItem(key) || '[]');
+
+            if (comentarios.length === 0) {
+                commentsList.innerHTML = '<p style="color:#888;font-size:0.9rem;text-align:center;padding:10px;">No hay opiniones aún. ¡Sé el primero!</p>';
+            } else {
+                let html = '';
+                comentarios.forEach(c => {
+                    html += `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <strong>${c.usuario}</strong> <span>${c.fecha}</span>
+                        </div>
+                        <p>${c.texto}</p>
+                    </div>
+                `;
+                });
+                commentsList.innerHTML = html;
+            }
+        }
+
+        function guardarComentario(e) {
             e.preventDefault();
             if (!productoSeleccionado || !currentUser) {
                 mostrarToastPG('🔒 Inicia sesión para comentar');
@@ -2503,30 +2554,22 @@
             const texto = commentInput.value.trim();
             if (!texto) return;
 
-            try {
-                // Enviar como mensaje al sistema
-                await window.pgApi.sendMessage({
-                    sender: 'user',
-                    content: `COMENTARIO en ${productoSeleccionado.nombre}: ${texto}`,
-                    contactId: currentUser.id
-                });
+            const key = 'pgComments_' + productoSeleccionado.nombre.replace(/\s+/g, '_');
+            const comentarios = JSON.parse(localStorage.getItem(key) || '[]');
 
-                // Guardar localmente para visualización inmediata si se desea
-                const key = 'pgComments_' + productoSeleccionado.nombre.replace(/\s+/g, '_');
-                const comentarios = JSON.parse(localStorage.getItem(key) || '[]');
-                comentarios.push({
-                    usuario: currentUser.nombre,
-                    texto: texto,
-                    fecha: new Date().toLocaleDateString()
-                });
-                localStorage.setItem(key, JSON.stringify(comentarios));
+            const nuevoComentario = {
+                usuario: currentUser.nombre,
+                texto: texto,
+                fecha: new Date().toLocaleDateString()
+            };
 
-                cargarComentarios(productoSeleccionado.nombre);
-                commentInput.value = '';
-                mostrarToastPG('💬 Opinión enviada');
-            } catch (err) {
-                mostrarToastPG('❌ Error al enviar comentario');
-            }
+            comentarios.push(nuevoComentario);
+            localStorage.setItem(key, JSON.stringify(comentarios));
+
+            // Recargar lista y limpiar input
+            cargarComentarios(productoSeleccionado.nombre);
+            commentInput.value = '';
+            mostrarToastPG('💬 Opinión enviada');
         }
 
         commentForm.addEventListener('submit', guardarComentario);
@@ -2546,33 +2589,26 @@
             const productCard = boton.closest('.product-card');
             const featuredInfo = boton.closest('.featured-info');
 
-            let nombre = '', descripcion = '', precio = '', imagen = '', id = '';
+            let nombre = '', descripcion = '', precio = '', imagen = '';
 
             if (promoCard) {
                 nombre = promoCard.querySelector('h3')?.textContent || '';
                 descripcion = 'Producto en promoción';
                 precio = promoCard.querySelector('.price-new')?.textContent || '';
                 imagen = promoCard.querySelector('img')?.src || '';
-                // Si tenemos window.pgProductos, podemos buscar el ID
-                const product = window.pgProductos.find(p => p.name === nombre);
-                id = product ? product._id : '';
             } else if (productCard) {
                 nombre = productCard.querySelector('h3')?.textContent || '';
                 descripcion = productCard.querySelector('.desc')?.textContent || '';
                 precio = productCard.querySelector('.price')?.textContent || '';
                 imagen = productCard.querySelector('img')?.src || '';
-                const product = window.pgProductos.find(p => p.name === nombre);
-                id = product ? product._id : '';
             } else if (featuredInfo) {
                 nombre = featuredInfo.querySelector('h2')?.textContent || '';
                 descripcion = featuredInfo.querySelector('p')?.textContent || '';
                 precio = featuredInfo.querySelector('.featured-price')?.textContent || '';
                 const featuredSection = featuredInfo.closest('.featured-grid');
                 imagen = featuredSection?.querySelector('.featured-img img')?.src || '';
-                const product = window.pgProductos.find(p => p.name === nombre);
-                id = product ? product._id : '';
             }
-            return { id, nombre, descripcion, precio, imagen };
+            return { nombre, descripcion, precio, imagen };
         }
 
         // --- Event Listener Global para botones ---
@@ -2603,15 +2639,13 @@
             }
 
             // 2. Manejo "Ver detalles" o "Comprar Ahora" -> Abrir Modal
-            // Los botones de "Comprar Ahora" y "Ver detalles" en las tarjetas ahora tienen onclick directo
-            // Este bloque solo manejará botones que no tengan un onclick explícito y que no sean del modal
-            if ((texto.includes('detalles') || texto.includes('comprar') || texto.includes('cotizar')) && !target.id.includes('modal') && !target.onclick) {
+            if ((texto.includes('detalles') || texto.includes('comprar') || texto.includes('cotizar')) && !target.id.includes('modal')) {
                 e.preventDefault();
                 if (!estaLogueado()) return irALogin();
 
                 const datos = extraerDatosProducto(target);
                 if (datos.nombre) {
-                    abrirModal(datos.nombre, datos.descripcion, datos.precio, datos.imagen, datos.id);
+                    abrirModal(datos.nombre, datos.descripcion, datos.precio, datos.imagen);
                 }
                 return;
             }
@@ -2629,13 +2663,12 @@
         // --- Añadir al carrito (ahora soporta cantidad variable) ---
         function agregarAlCarrito(producto, cantidad = 1) {
             const items = obtenerCarrito();
-            const existente = items.find(item => item.id === producto.id); // Usar ID para encontrar
+            const existente = items.find(item => item.nombre === producto.nombre);
 
             if (existente) {
                 existente.cantidad += cantidad;
             } else {
                 items.push({
-                    id: producto.id, // Guardar el ID del producto
                     nombre: producto.nombre,
                     precio: producto.precio,
                     imagen: producto.imagen,
@@ -2742,37 +2775,19 @@
             cartTotalEl.textContent = '$' + totalGeneral.toLocaleString('es-MX', { minimumFractionDigits: 2 });
         }
 
-        // --- FINALIZAR COMPRA (Conectado a API) ---
-        document.getElementById('cartCheckout').addEventListener('click', async () => {
+        // --- NUEVO: Botón "Finalizar Compra" ---
+        document.getElementById('cartCheckout').addEventListener('click', () => {
             const items = obtenerCarrito();
             if (items.length === 0) {
                 mostrarToastPG('⚠️ Tu carrito está vacío');
                 return;
             }
 
-            if (!confirm('¿Deseas confirmar tu compra? \nTotal: ' + document.getElementById('cartTotal').textContent)) return;
-
-            try {
-                const orderData = {
-                    customer: currentUser.nombre,
-                    items: items.map(item => ({
-                        product: item.id,
-                        quantity: item.cantidad,
-                        price: extraerPrecioNumerico(item.precio)
-                    })),
-                    total: extraerPrecioNumerico(document.getElementById('cartTotal').textContent)
-                };
-
-                const response = await window.pgApi.createOrder(orderData);
-                if (response._id) {
-                    vaciarCarrito();
-                    cerrarCarrito();
-                    alert('¡Gracias por tu compra! \nPedido #' + response._id + ' creado exitosamente.');
-                } else {
-                    mostrarToastPG('❌ Error al procesar el pedido');
-                }
-            } catch (err) {
-                mostrarToastPG('❌ Error de conexión al finalizar compra');
+            // Simular proceso de compra
+            if (confirm('¿Deseas confirmar tu compra? \nTotal: ' + document.getElementById('cartTotal').textContent)) {
+                vaciarCarrito();
+                cerrarCarrito();
+                alert('¡Gracias por tu compra! \nTu pedido ha sido procesado exitosamente.');
             }
         });
 
