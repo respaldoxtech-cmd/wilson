@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -1948,6 +1948,7 @@
                 <li><a href="#catalogo">Catálogo</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li id="loginLink"><a href="login.html" style="color:var(--red);"><i class="fa-solid fa-user"></i> Iniciar Sesión</a></li>
             </ul>
             <!-- ===== INDICADOR DE USUARIO LOGUEADO =====
                  Se muestra solo cuando hay sesión activa.
@@ -2389,6 +2390,7 @@
             const userAvatarEl = document.getElementById('userAvatar');
             const userNameEl = document.getElementById('userName');
             const cartFloatEl = document.getElementById('cartFloat');
+            const loginLinkEl = document.getElementById('loginLink');
 
             if (estaLogueado()) {
                 // USUARIO LOGUEADO: mostrar info del usuario en el navbar
@@ -2400,10 +2402,12 @@
                 cartFloatEl.style.display = 'flex';
                 // Actualizar el badge del carrito con la cantidad actual
                 actualizarBadgeCarrito();
+                if(loginLinkEl) loginLinkEl.style.display = 'none';
             } else {
                 // USUARIO NO LOGUEADO: ocultar elementos de sesión
                 userInfoEl.style.display = 'none';
                 cartFloatEl.style.display = 'none';
+                if(loginLinkEl) loginLinkEl.style.display = 'block';
             }
         }
 

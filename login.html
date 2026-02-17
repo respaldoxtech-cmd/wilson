@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - PowerGuard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --red: #e53e3e;
+            --black: #111111;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 24px;
+            display: block;
+            text-decoration: none;
+        }
+        .logo span { color: var(--red); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        .form-group input:focus { border-color: var(--red); outline: none; }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #c53030; }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .back-link:hover { color: var(--red); }
+        .error-msg {
+            color: var(--red);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> Power<span>Guard</span></a>
+        <h2 style="margin-bottom: 20px;">Bienvenido</h2>
+        <p class="error-msg" id="errorMsg">Credenciales incorrectas</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" id="username" placeholder="Ej: admin" required>
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" id="password" placeholder="••••••" required>
+            </div>
+            <button type="submit" class="btn">Ingresar</button>
+        </form>
+        <a href="index.html" class="back-link">← Volver a la tienda</a>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+
+            // Lógica de autenticación simulada
+            // Usuario ADMIN específico
+            if (user === 'admin' && pass === 'admin123') {
+                const userData = { 
+                    id: 'admin_01', 
+                    nombre: 'Administrador', 
+                    email: 'admin@powerguard.com', 
+                    role: 'admin' 
+                };
+                localStorage.setItem('pgCurrentUser', JSON.stringify(userData));
+                window.location.href = '/admin'; // Redirige al panel de administración
+            } 
+            // Usuario NORMAL (Cliente)
+            else if (user && pass) {
+                const userData = { 
+                    id: 'user_' + Date.now(), 
+                    nombre: user, 
+                    email: user + '@gmail.com', 
+                    role: 'user' 
+                };
+                localStorage.setItem('pgCurrentUser', JSON.stringify(userData));
+                window.location.href = '/'; // Redirige a la tienda
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
