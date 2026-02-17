@@ -1,0 +1,2708 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ===== META TAGS Y SEO ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerGuard - Respaldo Eléctrico, Instalación y Seguridad</title>
+    <meta name="description"
+        content="Venta e instalación de sistemas de respaldo eléctrico, UPS, plantas eléctricas y cámaras de seguridad. Protege tu hogar y negocio.">
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="PowerGuard - Respaldo Eléctrico y Seguridad">
+    <meta property="og:description"
+        content="Sistemas de respaldo eléctrico, instalación profesional y cámaras de seguridad.">
+    <meta property="og:type" content="website">
+    <!-- Google Fonts: tipografía moderna "Inter" -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome: librería de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ================================================================
+       VARIABLES CSS - Paleta: negro, gris y rojo
+       Cambia estos valores para modificar toda la apariencia del sitio.
+       ================================================================ */
+        :root {
+            --red: #e53e3e;
+            /* Rojo principal */
+            --red-dark: #c53030;
+            /* Rojo oscuro (hovers) */
+            --red-light: #feb2b2;
+            /* Rojo claro */
+            --black: #111111;
+            /* Negro principal */
+            --dark: #1a1a1a;
+            /* Negro suave (fondos) */
+            --gray-900: #1f1f1f;
+            /* Gris muy oscuro */
+            --gray-800: #2d2d2d;
+            /* Gris oscuro */
+            --gray-700: #3d3d3d;
+            --gray-600: #555555;
+            --gray-400: #9ca3af;
+            /* Gris medio (textos secundarios) */
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            /* Gris muy claro (fondos) */
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.25);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        /* ===== RESET Y BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gray-100);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== TÍTULO DE SECCIÓN REUTILIZABLE ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--gray-600);
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* Versión clara del título (para fondos oscuros) */
+        .section-title.light h2 {
+            color: var(--white);
+        }
+
+        .section-title.light p {
+            color: var(--gray-400);
+        }
+
+        /* ================================================================
+       1. BARRA SUPERIOR (top bar) - Info de contacto rápida
+       Inspirada en Daka: franja delgada arriba con teléfono/email
+       ================================================================ */
+        .top-bar {
+            background: var(--black);
+            color: var(--gray-400);
+            font-size: 0.8rem;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .top-bar a {
+            color: var(--gray-300);
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: var(--red);
+        }
+
+        .top-bar-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* ================================================================
+       2. NAVBAR PRINCIPAL - Logo, búsqueda y navegación
+       Similar a Daka: fondo blanco limpio, logo a la izquierda
+       ================================================================ */
+        .navbar {
+            background: var(--white);
+            border-bottom: 2px solid var(--red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        /* Logo: texto con ícono */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .logo i {
+            color: var(--red);
+            font-size: 1.3rem;
+        }
+
+        /* Barra de búsqueda (decorativa estilo Daka) */
+        .search-bar {
+            flex: 1;
+            max-width: 420px;
+            margin: 0 32px;
+            display: flex;
+            align-items: center;
+            background: var(--gray-100);
+            border: 2px solid var(--gray-200);
+            border-radius: 50px;
+            padding: 0 16px;
+            transition: var(--transition);
+        }
+
+        .search-bar:focus-within {
+            border-color: var(--red);
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 10px 8px;
+            flex: 1;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: var(--gray-600);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px;
+        }
+
+        /* Enlaces del menú de navegación */
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-700);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Botón hamburguesa (solo móvil) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--black);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* ================================================================
+       3. HERO / BANNER PRINCIPAL
+       Estilo Daka: banner grande con descuento destacado, fondo oscuro
+       ================================================================ */
+        .hero {
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray-900) 50%, #2a0a0a 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Patrón decorativo de fondo */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 50%, rgba(229, 62, 62, 0.12) 0%, transparent 60%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .hero-content .discount-big {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--red);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-content .discount-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gray-300);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            color: var(--gray-400);
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+            max-width: 440px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-height: 360px;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-14px)
+            }
+        }
+
+        /* ===== BOTONES REUTILIZABLES ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-red {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .btn-red:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(229, 62, 62, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .btn-outline:hover {
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(229, 62, 62, 0.35);
+        }
+
+        /* Botón outline específico para sección oscura (Hero) */
+        .btn-hero-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-hero-outline:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Botón outline específico para sección oscura (Featured/Más Info) */
+        .btn-featured-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-featured-outline:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-dark {
+            background: var(--gray-800);
+            color: var(--white);
+        }
+
+        .btn-dark:hover {
+            background: var(--gray-700);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        /* ================================================================
+       4. CATEGORÍAS DESTACADAS - Tarjetas tipo Daka debajo del hero
+       ================================================================ */
+        .categories {
+            padding: 0 0 60px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .cat-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .cat-card:hover {
+            border-color: var(--red);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cat-card i {
+            font-size: 2.2rem;
+            color: var(--red);
+            margin-bottom: 12px;
+        }
+
+        .cat-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+
+        .cat-card p {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+        }
+
+        /* ================================================================
+       5. SECCIÓN DE PROMOCIONES / OFERTAS
+       ================================================================ */
+        .promotions {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .promo-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--gray-200);
+        }
+
+        .promo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--red);
+        }
+
+        /* Badge de descuento rojo */
+        .promo-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--red);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .promo-card .img-wrap {
+            overflow: hidden;
+            background: var(--gray-100);
+        }
+
+        .promo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 12px;
+            transition: var(--transition);
+        }
+
+        .promo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .promo-info {
+            padding: 16px;
+        }
+
+        .promo-info h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--black);
+            min-height: 40px;
+        }
+
+        .promo-prices {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--gray-400);
+            font-size: 0.85rem;
+        }
+
+        .price-new {
+            color: var(--red);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .promo-info .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 10px;
+            font-size: 0.85rem;
+        }
+
+        /* ================================================================
+       6. CATÁLOGO DE PRODUCTOS
+       ================================================================ */
+        .catalog {
+            padding: 80px 0;
+        }
+
+        .catalog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 9px 22px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.88rem;
+            color: var(--gray-700);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--red);
+        }
+
+        .product-card .img-wrap {
+            overflow: hidden;
+            background: var(--gray-100);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            padding: 16px;
+            transition: var(--transition);
+        }
+
+        .product-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .product-body {
+            padding: 18px;
+        }
+
+        .product-body h3 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            min-height: 36px;
+        }
+
+        .product-body .desc {
+            color: var(--gray-600);
+            font-size: 0.82rem;
+            margin-bottom: 10px;
+        }
+
+        .product-body .price {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--red);
+            margin-bottom: 14px;
+        }
+
+        .product-body .ref {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .product-actions .btn {
+            flex: 1;
+            justify-content: center;
+            padding: 9px 6px;
+            font-size: 0.82rem;
+            border-radius: var(--radius-sm);
+        }
+
+        /* ================================================================
+       7. PRODUCTO DESTACADO - Layout 50/50
+       ================================================================ */
+        .featured {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-900) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(229, 62, 62, 0.08), transparent 70%);
+            bottom: -200px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-img img {
+            border-radius: var(--radius);
+            max-height: 420px;
+            width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 5px 16px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .featured-info h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .featured-info p {
+            color: var(--gray-400);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .featured-price {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            margin-bottom: 28px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--gray-300);
+            font-size: 0.95rem;
+        }
+
+        .features-list li i {
+            color: var(--red);
+            width: 18px;
+        }
+
+        /* ================================================================
+       8. UBICACIÓN - Google Maps + Info
+       ================================================================ */
+        .location {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .map-wrap {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .location-info {
+            background: var(--gray-100);
+            padding: 32px;
+            border-radius: var(--radius);
+        }
+
+        .location-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            color: var(--red);
+            font-size: 1.1rem;
+            margin-top: 3px;
+            width: 22px;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 2px;
+            font-size: 0.95rem;
+        }
+
+        .info-item span {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* ================================================================
+       9. SECCIÓN WHATSAPP
+       ================================================================ */
+        .whatsapp-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #128C7E 0%, var(--whatsapp) 100%);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .whatsapp-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-section p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 28px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-section .btn {
+            font-size: 1.05rem;
+            padding: 14px 36px;
+            background: var(--white);
+            color: var(--whatsapp);
+            font-weight: 700;
+        }
+
+        .whatsapp-section .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Botón flotante fijo */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: var(--whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.6rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45)
+            }
+
+            50% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7)
+            }
+        }
+
+        /* ================================================================
+       10. FOOTER
+       ================================================================ */
+        footer {
+            background: var(--black);
+            color: var(--gray-400);
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 36px;
+            margin-bottom: 36px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+
+        .footer-col p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .footer-col a {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--red);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gray-800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .social-links a:hover {
+            background: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-800);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* ===== ANIMACIONES DE SCROLL ===== */
+        .animate {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================================================================
+           11. MODAL DE DETALLE DE PRODUCTO (MEJORADO)
+           Diseño en 2 columnas: Foto a la izquierda, Info + Comentarios a la derecha.
+           Incluye selector de cantidad y sección de opiniones.
+           ================================================================ */
+
+        /* Fondo oscuro del modal */
+        .product-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 20px;
+        }
+
+        .product-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Contenedor principal del modal */
+        .product-modal {
+            background: var(--white);
+            border-radius: 16px;
+            width: 900px;
+            /* Más ancho para 2 columnas */
+            max-width: 95vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            /* Scroll interno si es muy alto */
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* 2 columnas iguales */
+            position: relative;
+        }
+
+        .product-modal-overlay.active .product-modal {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Columna Izquierda: Imagen del producto */
+        .modal-col-left {
+            background: var(--gray-100);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .modal-col-left img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+        }
+
+        /* Botón cerrar (ahora absoluto al modal completo) */
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        /* Columna Derecha: Información y Comentarios */
+        .modal-col-right {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .modal-col-right h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .modal-col-right .modal-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--red);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .modal-col-right .modal-desc {
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 24px;
+        }
+
+        /* Selector de cantidad */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector span {
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-right: 10px;
+        }
+
+        .qty-btn {
+            width: 36px;
+            height: 36px;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .qty-btn:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .qty-input {
+            width: 50px;
+            height: 36px;
+            text-align: center;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-family: inherit;
+        }
+
+        /* Acciones del modal (botones) */
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .modal-actions .btn {
+            flex: 1;
+            justify-content: center;
+        }
+
+        /* Sección de Comentarios */
+        .modal-comments-section {
+            margin-top: auto;
+            /* Empuja hacia abajo si hay espacio */
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .modal-comments-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comments-list {
+            margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .comment-item {
+            background: var(--gray-100);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            font-size: 0.8rem;
+            color: var(--gray-600);
+        }
+
+        .comment-header strong {
+            color: var(--black);
+        }
+
+        /* Formulario para agregar comentario */
+        .add-comment-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .add-comment-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .add-comment-form button {
+            padding: 0 16px;
+            background: var(--gray-800);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .add-comment-form button:hover {
+            background: var(--red);
+        }
+
+        /* Responsive para el modal (stack vertical en móvil) */
+        @media (max-width: 768px) {
+            .product-modal {
+                grid-template-columns: 1fr;
+                /* Una sola columna */
+                height: 90vh;
+            }
+
+            .modal-col-left {
+                padding: 20px;
+                height: 250px;
+            }
+
+            .modal-col-left img {
+                max-height: 100%;
+            }
+
+            .modal-col-right {
+                padding: 24px;
+            }
+        }
+
+        /* ================================================================
+           12. BOTÓN FLOTANTE DEL CARRITO
+           Se posiciona ARRIBA del botón flotante de WhatsApp.
+           Solo es visible cuando el usuario ha iniciado sesión.
+           Muestra un badge rojo con la cantidad de productos en el carrito.
+           ================================================================ */
+        .cart-float {
+            position: fixed;
+            bottom: 94px;
+            /* 58px (alto WhatsApp) + 24px (bottom WhatsApp) + 12px (gap) */
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: var(--red);
+            border-radius: 50%;
+            display: none;
+            /* Oculto por defecto, se muestra con JS al iniciar sesión */
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.4rem;
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.45);
+            z-index: 999;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+        }
+
+        .cart-float:hover {
+            transform: scale(1.1);
+            background: var(--red-dark);
+        }
+
+        /* Badge numérico del carrito (cantidad de productos) */
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: var(--white);
+            color: var(--red);
+            font-size: 0.7rem;
+            font-weight: 800;
+            min-width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ================================================================
+           13. SIDEBAR DEL CARRITO
+           Panel lateral que se desliza desde la derecha.
+           Muestra los productos añadidos al carrito.
+           ================================================================ */
+
+        /* Fondo oscuro que aparece detrás del sidebar */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2500;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Panel lateral del carrito */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            /* Fuera de pantalla por defecto */
+            width: 400px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--white);
+            z-index: 2600;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+            transition: right 0.35s cubic-bezier(.4, 0, .2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estado visible del sidebar (se abre desde la derecha) */
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        /* Cabecera del sidebar con título y botón de cerrar */
+        .cart-header {
+            padding: 20px 24px;
+            border-bottom: 2px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-header h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-header h3 i {
+            color: var(--red);
+        }
+
+        /* Botón X para cerrar el sidebar */
+        .cart-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-700);
+            transition: var(--transition);
+        }
+
+        .cart-close:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        /* Lista de productos en el carrito (scrollable) */
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 24px;
+        }
+
+        /* Mensaje cuando el carrito está vacío */
+        .cart-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--gray-400);
+        }
+
+        .cart-empty i {
+            font-size: 3rem;
+            margin-bottom: 14px;
+            color: var(--gray-300);
+        }
+
+        .cart-empty p {
+            font-size: 0.95rem;
+        }
+
+        /* Cada producto individual dentro del carrito */
+        .cart-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--gray-200);
+            align-items: center;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Imagen miniatura del producto en el carrito */
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-sm);
+            background: var(--gray-100);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        /* Info del producto (nombre, precio) */
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-info h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+
+        .cart-item-info .cart-item-price {
+            color: var(--red);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        /* Botón para eliminar un producto del carrito */
+        .cart-item-remove {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            border: none;
+            color: var(--gray-600);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .cart-item-remove:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        /* Pie del sidebar: total y botón vaciar */
+        .cart-footer {
+            padding: 20px 24px;
+            border-top: 2px solid var(--gray-200);
+        }
+
+        /* Fila del total */
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .cart-total span:first-child {
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .cart-total span:last-child {
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--red);
+        }
+
+        /* Botón "Finalizar Compra" */
+        .cart-checkout {
+            width: 100%;
+            padding: 14px 20px;
+            background: var(--whatsapp);
+            /* Color verde para resaltar la acción */
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            /* Espacio antes del botón vaciar */
+        }
+
+        .cart-checkout:hover {
+            background: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        /* Botón "Vaciar carrito" (Estilo rojo completo) */
+        .cart-clear {
+            width: 100%;
+            padding: 14px 20px;
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .cart-clear:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(229, 62, 62, 0.35);
+        }
+
+        /* ================================================================
+           14. TOAST NOTIFICATION (página principal)
+           Mensaje temporal en la parte inferior de la pantalla
+           ================================================================ */
+        .pg-toast {
+            position: fixed;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gray-800);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--red);
+            transition: bottom 0.4s cubic-bezier(.4, 0, .2, 1);
+            z-index: 9999;
+            white-space: nowrap;
+        }
+
+        .pg-toast.show {
+            bottom: 30px;
+        }
+
+        /* ================================================================
+           15. INDICADOR DE USUARIO LOGUEADO EN EL NAVBAR
+           Muestra un pequeño avatar/nombre al lado del menú
+           ================================================================ */
+        .user-info {
+            display: none;
+            /* Oculto por defecto, se muestra con JS */
+            align-items: center;
+            gap: 8px;
+            margin-left: 12px;
+        }
+
+        .user-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--red);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .user-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Botón de cerrar sesión */
+        .logout-btn {
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 4px;
+        }
+
+        .logout-btn:hover {
+            color: var(--red);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:1024px) {
+
+            .promo-grid,
+            .cat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                gap: 14px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .top-bar .container {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .top-bar-links {
+                display: none;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content .discount-big {
+                font-size: 3.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-height: 220px;
+            }
+
+            .cat-grid,
+            .promo-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================================================================
+     BARRA SUPERIOR - Información de contacto rápida (teléfono, email)
+     ================================================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fa-solid fa-phone"></i> +52 (555) 123-4567 &nbsp;|&nbsp; <i
+                    class="fa-solid fa-envelope"></i> contacto@powerguard.com</span>
+            <div class="top-bar-links">
+                <a href="#ubicacion"><i class="fa-solid fa-map-marker-alt"></i> Nuestras tiendas</a>
+                <a href="#"><i class="fa-solid fa-headset"></i> Soporte</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+     NAVBAR - Logo, barra de búsqueda y menú principal
+     ================================================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo"><i class="fa-solid fa-shield-halved"></i> Power<span>Guard</span></a>
+            <!-- Barra de búsqueda estilo Daka -->
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos, marcas y más...">
+                <button aria-label="Buscar"><i class="fa-solid fa-search"></i></button>
+            </div>
+            <!-- Botón hamburguesa para móvil -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><i
+                    class="fa-solid fa-bars"></i></button>
+            <!-- Enlaces del menú -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <!-- ===== INDICADOR DE USUARIO LOGUEADO =====
+                 Se muestra solo cuando hay sesión activa.
+                 Contiene: avatar con inicial, nombre y botón de cerrar sesión -->
+            <div class="user-info" id="userInfo">
+                <div class="user-avatar" id="userAvatar"></div>
+                <span class="user-name" id="userName"></span>
+                <button class="logout-btn" id="logoutBtn" title="Cerrar sesión">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================================================================
+     HERO - Banner principal con descuento destacado
+     Estilo Daka: porcentaje grande, fondo oscuro, imagen de producto
+     ================================================================ -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content animate">
+                <h1>Protege tu hogar y negocio</h1>
+                <div class="discount-big">HASTA 30%</div>
+                <div class="discount-text">de descuento en respaldo eléctrico</div>
+                <p>UPS, plantas eléctricas, instalación profesional y cámaras de seguridad. Soluciones confiables para
+                    tu tranquilidad.</p>
+                <div class="hero-buttons">
+                    <a href="catalogo.html" class="btn btn-red"><i class="fa-solid fa-th-large"></i> Ver Catálogo</a>
+                    <a href="https://wa.me/521234567890?text=Hola%2C%20estoy%20interesado%20en%20sus%20productos"
+                        target="_blank" class="btn btn-hero-outline"><i class="fa-brands fa-whatsapp"></i> Contactar</a>
+                </div>
+            </div>
+            <div class="hero-image animate">
+                <img src="https://placehold.co/500x400/1a1a1a/e53e3e?text=UPS+%E2%9A%A1+3000VA"
+                    alt="UPS Respaldo Eléctrico">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     CATEGORÍAS - 4 tarjetas de categoría debajo del hero (estilo Daka)
+     ================================================================ -->
+    <section class="categories">
+        <div class="container">
+            <div class="cat-grid">
+                <div class="cat-card animate">
+                    <i class="fa-solid fa-car-battery"></i>
+                    <h3>UPS y Reguladores</h3>
+                    <p>Respaldo eléctrico confiable</p>
+                </div>
+                <div class="cat-card animate">
+                    <i class="fa-solid fa-solar-panel"></i>
+                    <h3>Plantas Eléctricas</h3>
+                    <p>Energía continua garantizada</p>
+                </div>
+                <div class="cat-card animate">
+                    <i class="fa-solid fa-video"></i>
+                    <h3>Cámaras de Seguridad</h3>
+                    <p>Vigilancia 24/7</p>
+                </div>
+                <div class="cat-card animate">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h3>Instalación Profesional</h3>
+                    <p>Servicio técnico certificado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     PROMOCIONES - Ofertas especiales con tarjetas de descuento
+     ================================================================ -->
+    <section class="promotions" id="promociones">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>🔥 Ofertas Especiales</h2>
+                <p>Aprovecha nuestros descuentos por tiempo limitado</p>
+            </div>
+            <div class="promo-grid">
+                <!-- Tarjeta promo 1 -->
+                <div class="promo-card animate">
+                    <span class="promo-badge">-30%</span>
+                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=UPS+1500VA"
+                            alt="UPS 1500VA"></div>
+                    <div class="promo-info">
+                        <h3>UPS Interactivo 1500VA / 900W</h3>
+                        <div class="promo-prices">
+                            <span class="price-old">$4,200</span>
+                            <span class="price-new">$2,940</span>
+                        </div>
+                        <a href="#" class="btn btn-red">Comprar Ahora</a>
+                    </div>
+                </div>
+                <!-- Tarjeta promo 2 -->
+                <div class="promo-card animate">
+                    <span class="promo-badge">-25%</span>
+                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=Kit+4+Cámaras"
+                            alt="Kit Cámaras"></div>
+                    <div class="promo-info">
+                        <h3>Kit 4 Cámaras HD + DVR 1TB</h3>
+                        <div class="promo-prices">
+                            <span class="price-old">$8,500</span>
+                            <span class="price-new">$6,375</span>
+                        </div>
+                        <a href="#" class="btn btn-red">Comprar Ahora</a>
+                    </div>
+                </div>
+                <!-- Tarjeta promo 3 -->
+                <div class="promo-card animate">
+                    <span class="promo-badge">-20%</span>
+                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=Regulador+2000W"
+                            alt="Regulador"></div>
+                    <div class="promo-info">
+                        <h3>Regulador de Voltaje 2000W</h3>
+                        <div class="promo-prices">
+                            <span class="price-old">$1,800</span>
+                            <span class="price-new">$1,440</span>
+                        </div>
+                        <a href="#" class="btn btn-red">Comprar Ahora</a>
+                    </div>
+                </div>
+                <!-- Tarjeta promo 4 -->
+                <div class="promo-card animate">
+                    <span class="promo-badge">-15%</span>
+                    <div class="img-wrap"><img src="https://placehold.co/380x240/f3f4f6/111111?text=Cámara+PTZ"
+                            alt="Cámara PTZ"></div>
+                    <div class="promo-info">
+                        <h3>Cámara PTZ WiFi 360° 4MP</h3>
+                        <div class="promo-prices">
+                            <span class="price-old">$3,200</span>
+                            <span class="price-new">$2,720</span>
+                        </div>
+                        <a href="#" class="btn btn-red">Comprar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================================================================
+     PRODUCTO DESTACADO - Layout 50/50, imagen + info detallada
+     ================================================================ -->
+    <section class="featured">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-img animate">
+                    <img src="https://placehold.co/560x420/1a1a1a/e53e3e?text=Kit+8+Cámaras+⭐"
+                        alt="Kit 8 Cámaras Seguridad">
+                </div>
+                <div class="featured-info animate">
+                    <span class="featured-badge"><i class="fa-solid fa-trophy"></i> BESTSELLER</span>
+                    <h2>Kit Completo 8 Cámaras de Seguridad 4K</h2>
+                    <p>Sistema de videovigilancia profesional con grabador NVR, disco duro de 4TB y acceso remoto desde
+                        tu
+                        celular. Instalación incluida.</p>
+                    <div class="featured-price">$24,900</div>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check-circle"></i> 8 cámaras 4K Ultra HD con visión nocturna</li>
+                        <li><i class="fa-solid fa-check-circle"></i> NVR 8 canales + disco duro 4TB incluido</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Acceso remoto desde celular (iOS/Android)</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Detección inteligente de movimiento</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Instalación profesional incluida</li>
+                    </ul>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-red"><i class="fa-solid fa-shopping-bag"></i> Comprar Ahora</a>
+                        <a href="#" class="btn btn-featured-outline">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     UBICACIÓN - Mapa de Google Maps + información del negocio
+     ================================================================ -->
+    <section class="location" id="ubicacion">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>📍 Encuéntranos</h2>
+                <p>Visita nuestra tienda y conoce nuestros productos en persona</p>
+            </div>
+            <div class="location-grid animate">
+                <div class="map-wrap">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.661490088268!2d-99.1354000!3d19.4326000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92c3f15f851%3A0x63a8e5a1e46e3a99!2sCiudad%20de%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+                        allowfullscreen="" loading="lazy" title="Ubicación PowerGuard"></iframe>
+                </div>
+                <div class="location-info">
+                    <h3>Información de la Tienda</h3>
+                    <div class="info-item"><i class="fa-solid fa-map-marker-alt"></i>
+                        <div><strong>Dirección</strong><span>Av. Principal #123, Col. Centro, Ciudad de México, CP
+                                06000</span></div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-clock"></i>
+                        <div><strong>Horarios</strong><span>Lun - Vie: 9:00 AM - 7:00 PM<br>Sáb: 10:00 AM - 5:00
+                                PM<br>Dom:
+                                Cerrado</span></div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-phone"></i>
+                        <div><strong>Teléfono</strong><span>+52 (555) 123-4567</span></div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-envelope"></i>
+                        <div><strong>Email</strong><span>contacto@powerguard.com</span></div>
+                    </div>
+                    <a href="https://www.google.com/maps?q=19.4326,-99.1332" target="_blank" class="btn btn-red"
+                        style="width:100%;justify-content:center;margin-top:14px;"><i
+                            class="fa-solid fa-directions"></i>
+                        Cómo llegar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     SECCIÓN WHATSAPP - CTA verde con botón grande
+     ================================================================ -->
+    <section class="whatsapp-section" id="contacto">
+        <div class="container animate">
+            <h2><i class="fa-brands fa-whatsapp"></i> ¿Necesitas asesoría? Escríbenos</h2>
+            <p>Te ayudamos a elegir el sistema ideal para tu hogar o negocio. Respuesta inmediata.</p>
+            <a href="https://wa.me/521234567890?text=Hola%2C%20estoy%20interesado%20en%20sus%20productos%20de%20respaldo%20eléctrico"
+                target="_blank" class="btn"><i class="fa-brands fa-whatsapp"></i> Chatea con nosotros</a>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     FOOTER - Pie de página con columnas de info
+     ================================================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom:12px;color:#fff;"><i
+                            class="fa-solid fa-shield-halved"></i> Power<span>Guard</span></a>
+                    <p>Especialistas en respaldo eléctrico, instalación profesional y sistemas de seguridad. Más de 10
+                        años
+                        protegiendo hogares y negocios.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4><a href="#">Quiénes somos</a><a href="#">FAQ</a><a href="#">Política legal</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4><a href="#">Venta de equipos</a><a href="#">Instalación</a><a
+                        href="#">Mantenimiento</a><a href="#">Compras al por mayor</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4><a href="tel:+525551234567"><i class="fa-solid fa-phone"></i> +52 (555)
+                        123-4567</a><a href="mailto:contacto@powerguard.com"><i class="fa-solid fa-envelope"></i>
+                        contacto@powerguard.com</a><a href="#inicio">Inicio</a><a href="catalogo.html">Catálogo</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PowerGuard. Todos los derechos reservados. &nbsp;|&nbsp; <a href="#">Política de
+                        privacidad</a> &nbsp;|&nbsp; <a href="#">Términos y condiciones</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÓN FLOTANTE DEL CARRITO =====
+     Se posiciona ARRIBA del botón de WhatsApp.
+     Solo se muestra cuando el usuario ha iniciado sesión.
+     Al hacer clic, abre el sidebar del carrito.
+     El badge muestra cuántos productos hay en el carrito. -->
+    <button class="cart-float" id="cartFloat" aria-label="Carrito de compras">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+
+    <!-- ===== BOTÓN FLOTANTE WHATSAPP (siempre visible, esquina inferior derecha) ===== -->
+    <a href="https://wa.me/521234567890?text=Hola%2C%20estoy%20interesado%20en%20sus%20productos%20de%20respaldo%20eléctrico"
+        target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <!-- ================================================================
+     MODAL DE DETALLE DE PRODUCTO (MEJORADO)
+     Diseño: 2 columnas (Imagen | Info).
+     Características: Selector cantidad, Agregar vs Comprar, Comentarios.
+     ================================================================ -->
+    <div class="product-modal-overlay" id="productModal">
+        <div class="product-modal">
+
+            <!-- Botón Cerrar (X) -->
+            <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+
+            <!-- Columna Izquierda: Imagen Ampliada -->
+            <div class="modal-col-left">
+                <img src="" alt="Producto" id="modalImg">
+            </div>
+
+            <!-- Columna Derecha: Información y Acciones -->
+            <div class="modal-col-right">
+                <!-- Detalles del Producto -->
+                <h3 id="modalTitle">Nombre del Producto</h3>
+                <span class="modal-price" id="modalPrice">$0.00</span>
+                <p class="modal-desc" id="modalDesc">Descripción detallada del producto...</p>
+
+                <!-- Selector de Cantidad -->
+                <div class="quantity-selector">
+                    <span>Cantidad:</span>
+                    <button class="qty-btn" id="qtyMinus">-</button>
+                    <input type="number" class="qty-input" id="qtyInput" value="1" min="1" max="99">
+                    <button class="qty-btn" id="qtyPlus">+</button>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="modal-actions">
+                    <!-- Solo añade al carrito y cierra o muestra toast -->
+                    <button class="btn btn-outline" id="modalAddToCart">
+                        <i class="fa-solid fa-cart-plus"></i> Añadir
+                    </button>
+                    <!-- Añade al carrito y ABRE el sidebar inmediatamente -->
+                    <button class="btn btn-red" id="modalBuyNow">
+                        Comprar Ahora
+                    </button>
+                </div>
+
+                <!-- Sección de Comentarios -->
+                <div class="modal-comments-section">
+                    <h4><i class="fa-regular fa-comments"></i> Opiniones de clientes</h4>
+
+                    <!-- Lista de comentarios (se llena con JS) -->
+                    <div class="comments-list" id="commentsList">
+                        <!-- Ejemplo:
+                    <div class="comment-item">
+                        <div class="comment-header"><strong>Juan</strong> <span>12/02/2026</span></div>
+                        <p>Excelente producto, muy recomendado.</p>
+                    </div> 
+                    -->
+                    </div>
+
+                    <!-- Formulario para agregar comentario -->
+                    <form class="add-comment-form" id="commentForm">
+                        <input type="text" id="commentInput" placeholder="Escribe tu opinión..." required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+     SIDEBAR DEL CARRITO
+     Panel lateral que se desliza desde la derecha.
+     Muestra todos los productos añadidos al carrito del usuario actual.
+     ================================================================ -->
+    <!-- Fondo oscuro (overlay) detrás del sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <!-- Panel lateral del carrito -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <!-- Cabecera: título + botón cerrar -->
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-shopping-cart"></i> Mi Carrito</h3>
+            <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <!-- Lista de productos en el carrito (se genera dinámicamente con JS) -->
+        <div class="cart-items" id="cartItems">
+            <!-- Los items se insertan aquí con JavaScript -->
+        </div>
+        <!-- Pie: total y acciones -->
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <!-- NUEVO Botón "Finalizar Compra" -->
+            <button class="cart-checkout" id="cartCheckout">
+                <i class="fa-solid fa-check-circle"></i> Finalizar Compra
+            </button>
+            <!-- Botón vaciar carrito -->
+            <button class="cart-clear" id="cartClear">
+                <i class="fa-solid fa-trash"></i> Vaciar carrito
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== TOAST NOTIFICATION (mensajes temporales) ===== -->
+    <div class="pg-toast" id="pgToast"></div>
+
+    <!-- ================================================================
+     JAVASCRIPT - Toda la interactividad de la página
+     ================================================================ -->
+    <script>
+        // ================================================================
+        // JAVASCRIPT PRINCIPAL - index.html
+        // Contiene TODA la interactividad de la página:
+        //   1. Menú hamburguesa (móvil)
+        //   2. Filtros del catálogo
+        //   3. Animaciones al scroll
+        //   4. Sistema de autenticación (localStorage)
+        //   5. Modal de detalle de producto
+        //   6. Carrito de compras (localStorage)
+        // ================================================================
+
+        // ===== 1. MENÚ HAMBURGUESA: Abrir/cerrar menú en móvil =====
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+        // Cierra el menú al tocar un enlace (mejor experiencia en móvil)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+        });
+
+        // ===== 2. FILTROS DEL CATÁLOGO: Muestra/oculta productos por categoría =====
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.product-card').forEach(card => {
+                    card.style.display = (filter === 'todos' || card.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // ===== 3. ANIMACIONES AL SCROLL: Elementos aparecen al ser visibles =====
+        // Usa IntersectionObserver para detectar cuándo un elemento entra en pantalla
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('show'), i * 70);
+                    observer.unobserve(entry.target); // Solo anima una vez
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+        // ================================================================
+        // 4. SISTEMA DE AUTENTICACIÓN LOCAL
+        // Usa localStorage para verificar si hay un usuario con sesión activa.
+        // Si está logueado: muestra el botón de carrito y la info del usuario.
+        // Si NO está logueado: los botones de compra redirigen al login.
+        // ================================================================
+
+        // --- Obtener el usuario actual de localStorage ---
+        // "pgCurrentUser" se establece en login.html al iniciar sesión
+        let currentUser = JSON.parse(localStorage.getItem('pgCurrentUser') || 'null');
+
+        // --- Función para verificar si el usuario está logueado ---
+        function estaLogueado() {
+            return currentUser !== null;
+        }
+
+        // --- Actualizar la interfaz según el estado de autenticación ---
+        function actualizarUI() {
+            const userInfoEl = document.getElementById('userInfo');
+            const userAvatarEl = document.getElementById('userAvatar');
+            const userNameEl = document.getElementById('userName');
+            const cartFloatEl = document.getElementById('cartFloat');
+
+            if (estaLogueado()) {
+                // USUARIO LOGUEADO: mostrar info del usuario en el navbar
+                userInfoEl.style.display = 'flex';
+                // Poner la inicial del nombre como avatar
+                userAvatarEl.textContent = currentUser.nombre.charAt(0).toUpperCase();
+                userNameEl.textContent = currentUser.nombre.split(' ')[0]; // Solo primer nombre
+                // Mostrar el botón flotante del carrito
+                cartFloatEl.style.display = 'flex';
+                // Actualizar el badge del carrito con la cantidad actual
+                actualizarBadgeCarrito();
+            } else {
+                // USUARIO NO LOGUEADO: ocultar elementos de sesión
+                userInfoEl.style.display = 'none';
+                cartFloatEl.style.display = 'none';
+            }
+        }
+
+        // --- Ejecutar al cargar la página ---
+        actualizarUI();
+
+        // --- Botón de cerrar sesión ---
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            // Eliminar la sesión de localStorage
+            localStorage.removeItem('pgCurrentUser');
+            currentUser = null;
+            actualizarUI();
+            mostrarToastPG('👋 Sesión cerrada correctamente');
+        });
+
+        // ================================================================
+        // 5. TOAST NOTIFICATION (mensajes temporales)
+        // Muestra un mensaje en la parte inferior que desaparece automáticamente
+        // ================================================================
+        function mostrarToastPG(mensaje, duracion = 3000) {
+            const toast = document.getElementById('pgToast');
+            toast.textContent = mensaje;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), duracion);
+        }
+
+        // ================================================================
+        // 6. MODAL DE DETALLE DE PRODUCTO (MEJORADO)
+        // - 2 Columnas.
+        // - Selector de cantidad.
+        // - Comentarios.
+        // ================================================================
+
+        // --- Referencias a los elementos del modal ---
+        const modalOverlay = document.getElementById('productModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalCloseBtn = document.getElementById('modalClose');
+
+        // Referencias a botones de acción del modal
+        const btnModalAdd = document.getElementById('modalAddToCart');
+        const btnModalBuy = document.getElementById('modalBuyNow');
+
+        // Referencias a inputs de cantidad y comentarios
+        const qtyInput = document.getElementById('qtyInput');
+        const qtyMinus = document.getElementById('qtyMinus');
+        const qtyPlus = document.getElementById('qtyPlus');
+        const commentsList = document.getElementById('commentsList');
+        const commentForm = document.getElementById('commentForm');
+        const commentInput = document.getElementById('commentInput');
+
+        // --- Variable temporal para guardar datos actuales ---
+        let productoSeleccionado = null;
+
+        // --- Abrir modal con la info del producto ---
+        function abrirModal(nombre, descripcion, precio, imagenSrc) {
+            // Llenar datos básicos
+            modalImg.src = imagenSrc;
+            modalImg.alt = nombre;
+            modalTitle.textContent = nombre;
+            modalDesc.textContent = descripcion;
+            modalPrice.textContent = precio;
+
+            // Resetear cantidad a 1
+            qtyInput.value = 1;
+
+            // Guardar referencia
+            productoSeleccionado = {
+                nombre: nombre,
+                descripcion: descripcion,
+                precio: precio,
+                imagen: imagenSrc
+            };
+
+            // Cargar comentarios de este producto
+            cargarComentarios(nombre);
+
+            // Mostrar modal
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            productoSeleccionado = null;
+        }
+
+        modalCloseBtn.addEventListener('click', cerrarModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) cerrarModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                cerrarModal();
+                cerrarCarrito();
+            }
+        });
+
+        // --- Lógica del selector de cantidad (+ / -) ---
+        qtyMinus.addEventListener('click', () => {
+            let val = parseInt(qtyInput.value) || 1;
+            if (val > 1) qtyInput.value = val - 1;
+        });
+
+        qtyPlus.addEventListener('click', () => {
+            let val = parseInt(qtyInput.value) || 1;
+            if (val < 99) qtyInput.value = val + 1;
+        });
+
+        // --- SISTEMA DE COMENTARIOS (localStorage) ---
+        // Clave: "pgComments_{nombreProducto}"
+        function cargarComentarios(nombreProducto) {
+            const key = 'pgComments_' + nombreProducto.replace(/\s+/g, '_'); // Clave segura
+            const comentarios = JSON.parse(localStorage.getItem(key) || '[]');
+
+            if (comentarios.length === 0) {
+                commentsList.innerHTML = '<p style="color:#888;font-size:0.9rem;text-align:center;padding:10px;">No hay opiniones aún. ¡Sé el primero!</p>';
+            } else {
+                let html = '';
+                comentarios.forEach(c => {
+                    html += `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <strong>${c.usuario}</strong> <span>${c.fecha}</span>
+                        </div>
+                        <p>${c.texto}</p>
+                    </div>
+                `;
+                });
+                commentsList.innerHTML = html;
+            }
+        }
+
+        function guardarComentario(e) {
+            e.preventDefault();
+            if (!productoSeleccionado || !currentUser) {
+                mostrarToastPG('🔒 Inicia sesión para comentar');
+                return;
+            }
+
+            const texto = commentInput.value.trim();
+            if (!texto) return;
+
+            const key = 'pgComments_' + productoSeleccionado.nombre.replace(/\s+/g, '_');
+            const comentarios = JSON.parse(localStorage.getItem(key) || '[]');
+
+            const nuevoComentario = {
+                usuario: currentUser.nombre,
+                texto: texto,
+                fecha: new Date().toLocaleDateString()
+            };
+
+            comentarios.push(nuevoComentario);
+            localStorage.setItem(key, JSON.stringify(comentarios));
+
+            // Recargar lista y limpiar input
+            cargarComentarios(productoSeleccionado.nombre);
+            commentInput.value = '';
+            mostrarToastPG('💬 Opinión enviada');
+        }
+
+        commentForm.addEventListener('submit', guardarComentario);
+
+        // ================================================================
+        // 7. MANEJO DE INTERACCIONES DE PRODUCTO (Modificado)
+        // - Botón "Agregar" (tarjeta): Añade directo (cant: 1), NO abre modal.
+        // - Botón "Ver detalles" (tarjeta): Abre modal.
+        // - Botón "Comprar Ahora" (tarjeta): Abre modal (o podrías hacerlo directo, según prefieras).
+        //   Aquí asumiremos que "Ver detalles" y "Comprar Ahora" abren modal
+        //   para que el usuario elija cantidad.
+        // ================================================================
+
+        // --- Extraer datos del producto del DOM ---
+        function extraerDatosProducto(boton) {
+            const promoCard = boton.closest('.promo-card');
+            const productCard = boton.closest('.product-card');
+            const featuredInfo = boton.closest('.featured-info');
+
+            let nombre = '', descripcion = '', precio = '', imagen = '';
+
+            if (promoCard) {
+                nombre = promoCard.querySelector('h3')?.textContent || '';
+                descripcion = 'Producto en promoción';
+                precio = promoCard.querySelector('.price-new')?.textContent || '';
+                imagen = promoCard.querySelector('img')?.src || '';
+            } else if (productCard) {
+                nombre = productCard.querySelector('h3')?.textContent || '';
+                descripcion = productCard.querySelector('.desc')?.textContent || '';
+                precio = productCard.querySelector('.price')?.textContent || '';
+                imagen = productCard.querySelector('img')?.src || '';
+            } else if (featuredInfo) {
+                nombre = featuredInfo.querySelector('h2')?.textContent || '';
+                descripcion = featuredInfo.querySelector('p')?.textContent || '';
+                precio = featuredInfo.querySelector('.featured-price')?.textContent || '';
+                const featuredSection = featuredInfo.closest('.featured-grid');
+                imagen = featuredSection?.querySelector('.featured-img img')?.src || '';
+            }
+            return { nombre, descripcion, precio, imagen };
+        }
+
+        // --- Event Listener Global para botones ---
+        document.addEventListener('click', (e) => {
+            // Verificar botones relevantes. Buscamos clases específicas o texto.
+            const target = e.target.closest('a') || e.target.closest('button');
+            if (!target) return;
+
+            // Texto del botón para identificar acción
+            const texto = target.textContent.trim().toLowerCase();
+            // Clases para identificar tipo
+            const esBtnRed = target.classList.contains('btn-red');
+            const esBtnDark = target.classList.contains('btn-dark') || target.classList.contains('btn-outline');
+
+            // 1. Manejo "Agregar" (Carrito icono o texto "Agregar") -> Directo al carrito
+            if ((texto.includes('agregar') || target.querySelector('.fa-cart-plus')) && !target.id.includes('modal')) {
+                e.preventDefault();
+                if (!estaLogueado()) return irALogin();
+
+                const datos = extraerDatosProducto(target);
+                if (datos.nombre) {
+                    // Añadir 1 unidad directo
+                    agregarAlCarrito(datos, 1);
+                    mostrarToastPG('✅ 1x ' + datos.nombre + ' añadido');
+                    // Efecto visual opcional en el badge...
+                }
+                return;
+            }
+
+            // 2. Manejo "Ver detalles" o "Comprar Ahora" -> Abrir Modal
+            if ((texto.includes('detalles') || texto.includes('comprar') || texto.includes('cotizar')) && !target.id.includes('modal')) {
+                e.preventDefault();
+                if (!estaLogueado()) return irALogin();
+
+                const datos = extraerDatosProducto(target);
+                if (datos.nombre) {
+                    abrirModal(datos.nombre, datos.descripcion, datos.precio, datos.imagen);
+                }
+                return;
+            }
+        });
+
+        function irALogin() {
+            mostrarToastPG('🔒 Debes iniciar sesión primero');
+            setTimeout(() => window.location.href = 'login.html', 1200);
+        }
+
+        // ================================================================
+        // 8. FUNCIONES DEL CARRITO (Actualizadas)
+        // ================================================================
+
+        // --- Añadir al carrito (ahora soporta cantidad variable) ---
+        function agregarAlCarrito(producto, cantidad = 1) {
+            const items = obtenerCarrito();
+            const existente = items.find(item => item.nombre === producto.nombre);
+
+            if (existente) {
+                existente.cantidad += cantidad;
+            } else {
+                items.push({
+                    nombre: producto.nombre,
+                    precio: producto.precio,
+                    imagen: producto.imagen,
+                    cantidad: cantidad
+                });
+            }
+            guardarCarrito(items);
+            actualizarBadgeCarrito();
+            // Si el sidebar está abierto, refrescar
+            if (cartSidebar.classList.contains('active')) renderizarCarrito();
+        }
+
+        // --- Acciones de botones DENTRO del Modal ---
+
+        // Botón "Añadir" (Modal)
+        btnModalAdd.addEventListener('click', () => {
+            if (productoSeleccionado) {
+                const qty = parseInt(qtyInput.value) || 1;
+                agregarAlCarrito(productoSeleccionado, qty);
+                mostrarToastPG(`✅ ${qty}x ${productoSeleccionado.nombre} añadido`);
+                // Opcional: Cerrar modal o dejar abierto
+                // cerrarModal(); 
+            }
+        });
+
+        // Botón "Comprar Ahora" (Modal)
+        btnModalBuy.addEventListener('click', () => {
+            if (productoSeleccionado) {
+                const qty = parseInt(qtyInput.value) || 1;
+                agregarAlCarrito(productoSeleccionado, qty);
+                cerrarModal();
+                abrirCarrito(); // Abrir sidebar directo
+            }
+        });
+
+        // --- Funciones auxiliares de carrito (igual que antes) ---
+        function claveCarrito() {
+            if (!currentUser) return null;
+            return 'pgCart_' + currentUser.id;
+        }
+        function obtenerCarrito() {
+            const clave = claveCarrito();
+            if (!clave) return [];
+            return JSON.parse(localStorage.getItem(clave) || '[]');
+        }
+        function guardarCarrito(items) {
+            const clave = claveCarrito();
+            if (!clave) return;
+            localStorage.setItem(clave, JSON.stringify(items));
+        }
+        function eliminarDelCarrito(indice) {
+            const items = obtenerCarrito();
+            items.splice(indice, 1);
+            guardarCarrito(items);
+            actualizarBadgeCarrito();
+            renderizarCarrito();
+        }
+        function vaciarCarrito() {
+            guardarCarrito([]);
+            actualizarBadgeCarrito();
+            renderizarCarrito();
+            mostrarToastPG('🗑️ Carrito vaciado');
+        }
+        function actualizarBadgeCarrito() {
+            if (!estaLogueado()) return;
+            const items = obtenerCarrito();
+            const total = items.reduce((sum, item) => sum + item.cantidad, 0);
+            document.getElementById('cartBadge').textContent = total;
+        }
+        function extraerPrecioNumerico(precioStr) {
+            const limpio = precioStr.replace(/[^0-9.,]/g, '').replace(/,/g, '');
+            return parseFloat(limpio) || 0;
+        }
+
+        // --- Renderizado del carrito (igual que antes) ---
+        function renderizarCarrito() {
+            const cartItemsEl = document.getElementById('cartItems');
+            const cartTotalEl = document.getElementById('cartTotal');
+            const items = obtenerCarrito();
+
+            if (items.length === 0) {
+                cartItemsEl.innerHTML = `<div class="cart-empty"><i class="fa-solid fa-cart-shopping"></i><p>Tu carrito está vacío</p></div>`;
+                cartTotalEl.textContent = '$0';
+                return;
+            }
+
+            let html = '';
+            let totalGeneral = 0;
+            items.forEach((item, index) => {
+                const precioNum = extraerPrecioNumerico(item.precio);
+                const subtotal = precioNum * item.cantidad;
+                totalGeneral += subtotal;
+                html += `
+                <div class="cart-item">
+                    <div class="cart-item-img"><img src="${item.imagen}" alt="${item.nombre}"></div>
+                    <div class="cart-item-info">
+                        <h4>${item.nombre}</h4>
+                        <span class="cart-item-price">$${precioNum.toLocaleString()} x ${item.cantidad}</span>
+                    </div>
+                    <button class="cart-item-remove" onclick="eliminarDelCarrito(${index})"><i class="fa-solid fa-trash"></i></button>
+                </div>`;
+            });
+            cartItemsEl.innerHTML = html;
+            cartTotalEl.textContent = '$' + totalGeneral.toLocaleString('es-MX', { minimumFractionDigits: 2 });
+        }
+
+        // --- NUEVO: Botón "Finalizar Compra" ---
+        document.getElementById('cartCheckout').addEventListener('click', () => {
+            const items = obtenerCarrito();
+            if (items.length === 0) {
+                mostrarToastPG('⚠️ Tu carrito está vacío');
+                return;
+            }
+
+            // Simular proceso de compra
+            if (confirm('¿Deseas confirmar tu compra? \nTotal: ' + document.getElementById('cartTotal').textContent)) {
+                vaciarCarrito();
+                cerrarCarrito();
+                alert('¡Gracias por tu compra! \nTu pedido ha sido procesado exitosamente.');
+            }
+        });
+
+        // --- Apertura del Carrito ---
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartOverlay = document.getElementById('cartOverlay');
+
+        function abrirCarrito() {
+            renderizarCarrito();
+            cartSidebar.classList.add('active');
+            cartOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function cerrarCarrito() {
+            cartSidebar.classList.remove('active');
+            cartOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('cartFloat').addEventListener('click', abrirCarrito);
+        document.getElementById('cartClose').addEventListener('click', cerrarCarrito);
+        cartOverlay.addEventListener('click', cerrarCarrito);
+        document.getElementById('cartClear').addEventListener('click', vaciarCarrito);
+
+
+    </script>
+</body>
+
+</html>
