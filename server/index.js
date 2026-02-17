@@ -35,7 +35,7 @@ const distPath = path.join(__dirname, '../dist');
 app.use(express.static(distPath));
 
 // Manejar cualquier otra ruta devolviendo el index.html (para React Router)
-app.get('*', (req, res) => {
+app.get('(.*)', (req, res) => {
     const indexPath = path.join(distPath, 'index.html');
     res.sendFile(indexPath, (err) => {
         if (err) {
