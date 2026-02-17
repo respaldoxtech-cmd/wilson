@@ -427,9 +427,9 @@
                     localStorage.setItem('pgToken', data.token);
                     mostrarToast('✅ ¡Bienvenido de nuevo!');
 
-                    // Lógica de redirección específica
+                    // Lógica de redirección específica (Dashboard consolidado)
                     if (email === 'admin@powerguard.com') {
-                        setTimeout(() => window.location.href = '/admin/users', 1000);
+                        setTimeout(() => window.location.href = '/admin', 1000);
                         return;
                     }
 
