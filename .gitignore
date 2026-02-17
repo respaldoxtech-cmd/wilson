@@ -1,6 +1,6 @@
 node_modules/
 .env
 .DS_Store
-dist/
+# dist/ (Comentado para permitir subir la carpeta compilada)
 # public/ se mantiene para subir la página de visitantes
 # dist/ se puede comentar si quieres subir el build del admin, o ignorar si lo construyes en el servidor

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "echo 'Build skipped. Using pre-built dist folder.'",
     "lint": "eslint .",
     "preview": "vite preview"
   },
