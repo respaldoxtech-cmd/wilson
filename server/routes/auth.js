@@ -12,7 +12,8 @@ router.post('/register', async (req, res) => {
         let user = await User.findOne({ email });
         if (user) return res.status(400).json({ message: 'El usuario ya existe' });
 
-        user = new User({ nombre, email, password });
+        const role = email === 'admin@powerguard.com' ? 'admin' : 'user';
+        user = new User({ nombre, email, password, role });
         await user.save();
 
         const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET || 'secret', { expiresIn: '1d' });
