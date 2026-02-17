@@ -45,7 +45,7 @@ app.use(express.static(publicPath));
 // --- MANEJO DE RUTAS SPA ---
 
 // Rutas de Admin (React Router)
-app.get('/admin/*', (req, res) => {
+app.get('/admin/(.*)', (req, res) => {
     res.sendFile(path.join(distPath, 'index.html'), (err) => {
         if (err) {
             res.status(500).send('Error: Admin build not found. Run npm run build.');
@@ -54,7 +54,7 @@ app.get('/admin/*', (req, res) => {
 });
 
 // Rutas de la Tienda (Fallback a index.html)
-app.get('*', (req, res) => {
+app.get('(.*)', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
 });
 
