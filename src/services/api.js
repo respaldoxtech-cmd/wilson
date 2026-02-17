@@ -21,8 +21,26 @@ export const orderAPI = {
 };
 
 export const messageAPI = {
-    getAll: (contactId) => api.get(`/messages${contactId ? `?contactId=${contactId}` : ''}`),
-    send: (message) => api.post('/messages', message),
+    async getMessages(contactId = null) {
+        const url = contactId ? `${API_URL}/messages?contactId=${contactId}` : `${API_URL}/messages`;
+        const res = await axios.get(url);
+        return res.data;
+    }
+};
+
+export const userAPI = {
+    async getUsers() {
+        const res = await axios.get(`${API_URL}/users`);
+        return res.data;
+    },
+    async updateRole(id, role) {
+        const res = await axios.patch(`${API_URL}/users/${id}`, { role });
+        return res.data;
+    },
+    async deleteUser(id) {
+        const res = await axios.delete(`${API_URL}/users/${id}`);
+        return res.data;
+    }
 };
 
 export default api;

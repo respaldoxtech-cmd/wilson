@@ -7,6 +7,7 @@ import Products from './pages/Products';
 import Orders from './pages/Orders';
 import Communication from './pages/Communication';
 import MeetingPoints from './pages/MeetingPoints';
+import Users from './pages/Users';
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="communication" element={<Communication />} />
           <Route path="meeting-points" element={<MeetingPoints />} />
+          <Route path="users" element={<Users />} />
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

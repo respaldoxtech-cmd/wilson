@@ -26,11 +26,13 @@ const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
 const messageRoutes = require('./routes/messages');
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/users');
 
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 // --- SERVIR ARCHIVOS ESTÁTICOS ---
 

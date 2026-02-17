@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Package, ShoppingCart, MessageSquare, MapPin, Menu, Bell, User, X } from 'lucide-react';
+import { LayoutDashboard, Package, ShoppingCart, MessageSquare, MapPin, Menu, Bell, User, X, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './../styles/index.css';
 
@@ -44,6 +44,7 @@ const SidebarContent = ({ onClose }) => (
             <SidebarLink to="/orders" icon={<ShoppingCart size={20} />} label="Órdenes" onClick={onClose} />
             <SidebarLink to="/communication" icon={<MessageSquare size={20} />} label="Comunicación" onClick={onClose} />
             <SidebarLink to="/meeting-points" icon={<MapPin size={20} />} label="Puntos Encuentro" onClick={onClose} />
+            <SidebarLink to="/users" icon={<Users size={20} />} label="Usuarios" onClick={onClose} />
         </nav>
 
         <div style={{ padding: '1rem', borderTop: '1px solid var(--glass-border)' }}>

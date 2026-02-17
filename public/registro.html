@@ -402,7 +402,18 @@
         }
 
         document.getElementById('googleBtn').addEventListener('click', () => {
-            mostrarToast('⚠️ Función no disponible. Usa el formulario.');
+            mostrarToast('⏳ Conectando con Google...');
+            setTimeout(() => {
+                mostrarToast('✅ Sesión iniciada como Test Google');
+                localStorage.setItem('pgCurrentUser', JSON.stringify({
+                    id: 'goog_123',
+                    nombre: 'Test Google',
+                    email: 'google_user@test.com',
+                    role: 'user'
+                }));
+                localStorage.setItem('pgToken', 'mock_token_google');
+                setTimeout(() => window.location.href = 'index.html', 1000);
+            }, 1500);
         });
     </script>
 </body>
